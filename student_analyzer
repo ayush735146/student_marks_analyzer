@@ -1,0 +1,25 @@
+def analyze_marks(marks):
+    if not marks:
+        raise ValueError("Marks list cannot be empty.")
+
+    total = sum(marks)
+
+    return {
+        "total": total,
+        "average": total / len(marks),
+        "highest": max(marks),
+        "lowest": min(marks)
+    }
+
+
+marks = [78, 85, 92, 67, 88, 74, 95, 81, 69, 90]
+
+result = analyze_marks(marks)
+
+print("Student Marks Analysis")
+print("-" * 24)
+print(f"Number of students : {len(marks)}")
+print(f"Total marks        : {result['total']}")
+print(f"Average marks      : {result['average']:.2f}")
+print(f"Highest marks      : {result['highest']}")
+print(f"Lowest marks       : {result['lowest']}")
